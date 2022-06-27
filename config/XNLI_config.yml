@@ -1,0 +1,155 @@
+#Setting from "mT6: Multilingual Pretrained Text-to-Text Transformer with Translation Pairs"
+mode: pfx_tune  # finetune, pfx_tune, pfx_enc_tune
+exp_name: experiment
+model_checkpoint: google/mt5-base
+seed: 0
+num_gpus: 1
+num_workers: 0
+data_dir:
+  ar_en:
+  bg_en:
+  de_en:
+  el_en:
+  es_en:
+  fr_en:
+  hi_en:
+  ru_en:
+  sw_en:
+  th_en:
+  tr_en:
+  ur_en:
+  vi_en:
+  zh_en:
+  NLI:
+  ar_en+NLI:
+  bg_en+NLI:
+  de_en+NLI:
+  el_en+NLI:
+  es_en+NLI:
+  fr_en+NLI:
+  hi_en+NLI:
+  ru_en+NLI:
+  sw_en+NLI:
+  th_en+NLI:
+  tr_en+NLI:
+  ur_en+NLI:
+  vi_en+NLI:
+  zh_en+NLI:
+batch_size:
+  train: 16
+  val: 256
+  test: 256
+num_beams: 1
+save_samples: false
+val_check_interval: 1.0
+grad_acc_steps: 4
+lr: 0.0001
+max_norm: 1.0
+num_epochs: -1
+max_steps: 100000
+fewshot: 1.0
+patience: 10
+debug: true
+eval_loss_only: false
+resume_from_ckpt:
+load_pretrained:
+load_pretrained_mixer:
+preseqlen: 100
+mid_dim: 800
+dropout_rate: 0.0
+pfx_dropout_rate: 0.1
+composition_mode: concatenation  # 'addition', 'average', 'concatenation', 'layermix', 'multiply', 'maxpooling'
+composition_tasks:
+do_pseudo_label_gen: false
+pipeline_task:
+do_prefix_mixing: false
+num_compositions: 1
+activated_atomic_tasks:
+max_length:
+  ar_en:
+    in: 200
+    out: 200
+  bg_en:
+    in: 200
+    out: 200
+  de_en:
+    in: 200
+    out: 200
+  el_en:
+    in: 200
+    out: 200
+  es_en:
+    in: 200
+    out: 200
+  fr_en:
+    in: 200
+    out: 200
+  hi_en:
+    in: 200
+    out: 200
+  ru_en:
+    in: 200
+    out: 200
+  sw_en:
+    in: 200
+    out: 200
+  th_en:
+    in: 200
+    out: 200
+  tr_en:
+    in: 200
+    out: 200
+  ur_en:
+    in: 200
+    out: 200
+  vi_en:
+    in: 200
+    out: 200
+  zh_en:
+    in: 200
+    out: 200
+  NLI:
+    in: 200
+    out: 5
+  ar_en+NLI:
+    in: 200
+    out: 5
+  bg_en+NLI:
+    in: 200
+    out: 5
+  de_en+NLI:
+    in: 200
+    out: 5
+  el_en+NLI:
+    in: 200
+    out: 5
+  es_en+NLI:
+    in: 200
+    out: 5
+  fr_en+NLI:
+    in: 200
+    out: 5
+  hi_en+NLI:
+    in: 200
+    out: 5
+  ru_en+NLI:
+    in: 200
+    out: 5
+  sw_en+NLI:
+    in: 200
+    out: 5
+  th_en+NLI:
+    in: 200
+    out: 5
+  tr_en+NLI:
+    in: 200
+    out: 5
+  ur_en+NLI:
+    in: 200
+    out: 5
+  vi_en+NLI:
+    in: 200
+    out: 5
+  zh_en+NLI:
+    in: 200
+    out: 5
