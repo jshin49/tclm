@@ -1,0 +1,135 @@
+#Setting from "mT6: Multilingual Pretrained Text-to-Text Transformer with Translation Pairs"
+mode: pfx_enc_tune  # finetune, pfx_tune, pfx_enc_tune
+exp_name: prefix-tuning
+model_checkpoint: t5-base
+seed: 1
+num_gpus: 1
+num_workers: 0
+data_dir:
+  summarization:
+  translation-doc-fr-en:
+  translation-doc-en-fr:
+  XLS-fr-en:
+  XLS-en-fr:
+  translation-doc-de-en:
+  translation-doc-en-de:
+  XLS-de-en:
+  XLS-en-de:
+  translation-doc-en-zh:
+  translation-sum-en-zh:
+  XLS-en-zh:
+  translation-doc-ru-en:
+  translation-sum-ru-en:
+  XLS-ru-en:
+  translation-doc-vi-en:
+  translation-sum-vi-en:
+  XLS-vi-en:
+  translation-doc-es-en:
+  translation-sum-es-en:
+  XLS-es-en:
+  translation-doc-tr-en:
+  translation-sum-tr-en:
+  XLS-tr-en:
+batch_size:
+  train: 4
+  val: 4
+  test: 4
+num_beams: 1
+save_samples: False
+val_check_interval: 0.5
+grad_acc_steps: 4
+lr: 0.0001
+max_norm: 1.0
+num_epochs: -1
+max_steps: 100000
+fewshot: 1.0
+patience: 10
+debug: True
+eval_loss_only: True
+resume_from_ckpt:
+load_pretrained:
+load_pretrained_mixer:
+preseqlen: 20
+mid_dim: 800
+dropout_rate: 0.0
+pfx_dropout_rate: 0.1
+composition_mode: concatenation  # 'addition', 'average', 'concatenation', 'layermix', 'multiply', 'maxpooling'
+composition_tasks:
+do_pseudo_label_gen: false
+pipeline_task:
+do_prefix_mixing: false
+num_compositions: 1
+activated_atomic_tasks:
+max_length:
+  summarization:
+    in: 512
+    out: 200
+  translation-doc-fr-en:
+    in: 200
+    out: 200
+  translation-doc-en-fr:
+    in: 200
+    out: 200
+  XLS-fr-en:
+    in: 512
+    out: 200
+  XLS-en-fr:
+    in: 512
+    out: 200
+  translation-doc-de-en:
+    in: 200
+    out: 200
+  translation-doc-en-de:
+    in: 200
+    out: 200
+  XLS-de-en:
+    in: 512
+    out: 200
+  XLS-en-de:
+    in: 512
+    out: 200
+  translation-doc-en-zh:
+    in: 512
+    out: 512
+  translation-sum-en-zh:
+    in: 200
+    out: 200
+  XLS-en-zh:
+    in: 512
+    out: 200
+  translation-doc-ru-en:
+    in: 512
+    out: 512
+  translation-sum-ru-en:
+    in: 200
+    out: 200
+  XLS-ru-en:
+    in: 512
+    out: 200
+  translation-doc-vi-en:
+    in: 512
+    out: 512
+  translation-sum-vi-en:
+    in: 200
+    out: 200
+  XLS-vi-en:
+    in: 512
+    out: 200
+  translation-doc-es-en:
+    in: 512
+    out: 512
+  translation-sum-es-en:
+    in: 200
+    out: 200
+  XLS-es-en:
+    in: 512
+    out: 200
+  translation-doc-tr-en:
+    in: 512
+    out: 512
+  translation-sum-tr-en:
+    in: 200
+    out: 200
+  XLS-tr-en:
+    in: 512
+    out: 200

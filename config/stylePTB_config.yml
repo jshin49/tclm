@@ -1,0 +1,165 @@
+mode: pfx_enc_tune  # finetune, pfx_tune, pfx_enc_tune
+exp_name: prefix-tuning
+model_checkpoint: t5-base
+seed: 1
+num_gpus: 1
+num_workers: 0
+data_dir:
+  PPR:
+  PTA:
+  ATP:
+  TFU:
+  TPR:
+  TPA:
+  ARR:
+  PBF:
+  PFB:
+  PPR+ATP:
+  PPR+PTA:
+  TFU+ATP:
+  TFU+PTA:
+  TPR+ATP:
+  TPR+PTA:
+  TPA+ATP:
+  TPA+PTA:
+  TFU+PPR:
+  TPR+PPR:
+  TPA+PPR:
+  ARR+PFB:
+  ARR+PBF:
+  TFU+ARR:
+  TPA+ARR:
+  TPR+ARR:
+  TFU+PBF:
+  TFU+PFB:
+  TPA+PFB:
+  TPA+PBF:
+  TPR+PBF:
+  TPR+PFB:
+batch_size:
+  train: 16
+  val: 16
+  test: 16
+num_beams: 6
+save_samples: False
+val_check_interval: 1.0
+grad_acc_steps: 1
+lr: 5e-5
+max_norm: 1.0
+num_epochs: 30
+max_steps: -1
+fewshot: 1.0
+patience: 30
+debug: True
+eval_loss_only: False
+resume_from_ckpt:
+load_pretrained:
+load_pretrained_mixer:
+preseqlen: 20
+mid_dim: 800
+dropout_rate: 0.0
+pfx_dropout_rate: 0.1
+n_lm_layer: 12
+n_lm_head: 12
+n_lm_hidden_state: 768
+composition_mode: concatenation  # 'addition', 'average', 'concatenation', 'layermix', 'multiply', 'maxpooling'
+composition_tasks:
+do_pseudo_label_gen: false
+pipeline_task:
+do_prefix_mixing: false
+num_compositions: 1
+activated_atomic_tasks:
+max_length:
+  PPR:
+    in: 100
+    out: 100
+  PTA:
+    in: 100
+    out: 100
+  ATP:
+    in: 100
+    out: 100
+  TFU:
+    in: 100
+    out: 100
+  TPR:
+    in: 100
+    out: 100
+  TPA:
+    in: 100
+    out: 100
+  ARR:
+    in: 100
+    out: 100
+  PBF:
+    in: 100
+    out: 100
+  PFB:
+    in: 100
+    out: 100
+  PPR+ATP:
+    in: 100
+    out: 100
+  PPR+PTA:
+    in: 100
+    out: 100
+  TFU+ATP:
+    in: 100
+    out: 100
+  TFU+PTA:
+    in: 100
+    out: 100
+  TPR+ATP:
+    in: 100
+    out: 100
+  TPR+PTA:
+    in: 100
+    out: 100
+  TPA+ATP:
+    in: 100
+    out: 100
+  TPA+PTA:
+    in: 100
+    out: 100
+  TFU+PPR:
+    in: 100
+    out: 100
+  TPR+PPR:
+    in: 100
+    out: 100
+  TPA+PPR:
+    in: 100
+    out: 100
+  ARR+PFB:
+    in: 100
+    out: 100
+  ARR+PBF:
+    in: 100
+    out: 100
+  TFU+ARR:
+    in: 100
+    out: 100
+  TPA+ARR:
+    in: 100
+    out: 100
+  TPR+ARR:
+    in: 100
+    out: 100
+  TFU+PBF:
+    in: 100
+    out: 100
+  TFU+PFB:
+    in: 100
+    out: 100
+  TPA+PFB:
+    in: 100
+    out: 100
+  TPA+PBF:
+    in: 100
+    out: 100
+  TPR+PBF:
+    in: 100
+    out: 100
+  TPR+PFB:
+    in: 100
+    out: 100

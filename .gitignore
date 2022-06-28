@@ -1,0 +1,42 @@
+__pycache__
+.DS_STORE
+
+#
+*.egg-info
+
+# data files
+*.source
+*.target
+*.json
+*.pkl
+*.csv
+*.tsv
+
+# pytorch lightning logs
+lightning_logs
+
+# wandb logs
+wandb
+
+# numpy cache
+*.npy
+
+# traing logs
+logs
+*.sh
+
+# model checkpoint
+*.ckpt
+
+# images
+*.png
+
+# text
+*.txt
+
+# IntelliJ
+.idea
+
+# Jupyter notebook
+*.ipynb
+*.ipynb_checkpoints
