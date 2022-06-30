@@ -45,5 +45,3 @@ CUDA_VISIBLE_DEVICES=0 python scripts/eval.py data_dir.PTA+PPR=../StylePTB/XsumR
 CUDA_VISIBLE_DEVICES=0 python scripts/eval_pipeline.py data_dir.PTA+PPR=../StylePTB/XsumReformedDatasets/Compositional/Tense+Voice+PP_Removal/PTA+PPR num_gpus=1 load_pretrained='[logs/PTA/pfx_embed_tune/seed_1, logs/PPR/pfx_embed_tune/seed_1]'
 ```
 
-hangyeol.yu@riiid.co
-myeongho.jeong@riiid.co
